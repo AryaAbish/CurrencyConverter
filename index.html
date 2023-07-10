@@ -12,24 +12,28 @@
         <img src="https://i.postimg.cc/s2f5vDb5/Currency-Converter-Widget-in-Word-Press-widget.png" alt="currency" class="img-thumbnail img-rounded">
         <h1>Currency Converter</h1>
         <h6 class="text-start">Amount</h6>
-        <input class="form-control" type="number" id="resone"  min="0" value="1">
+        <input class="form-control" type="number" id="resone"  min="0" value="1" onkeypress="mykey(event)">
         <div class="container inside">
             <select name="" id="one" class="m-2">
+                <option value="AED">AED</option>
                 <option value="AUD">AUD</option>
                 <option value="CAD">CAD</option>
                 <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
                 <option value="INR">INR</option>
                 <option value="JPY">JPY</option>
+                <option value="QAR">QAR</option>
                 <option value="USD" selected>USD</option>
             </select>
             <select name="" id="two" class="m-2">
+                <option value="AED">AED</option>
                 <option value="AUD">AUD</option>
                 <option value="CAD">CAD</option>
                 <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
                 <option value="INR" selected>INR</option>
                 <option value="JPY">JPY</option>
+                <option value="QAR">QAR</option>
                 <option value="USD">USD</option>
             </select>
         </div>
@@ -39,6 +43,13 @@
     </div>
 </body>
 <script>
+
+function mykey(event){
+        var x=event.code;
+        if(x=="Enter"){
+            updaterate()
+        }
+    }
 
     function updaterate(){
         selone=one.value
